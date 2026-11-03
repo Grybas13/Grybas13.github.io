@@ -2853,3 +2853,35 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/* Kainų lentelė */
+.kainu-lentele {
+  border-radius: 12px;
+}
+
+.kainu-lentele table {
+  --bs-table-bg: var(--surface-color);
+  --bs-table-color: var(--default-color);
+  --bs-table-border-color: rgba(255, 255, 255, 0.08);
+  --bs-table-hover-bg: rgba(19, 135, 193, 0.15);
+  --bs-table-hover-color: #ffffff;
+  margin-bottom: 0;
+}
+
+.kainu-lentele th,
+.kainu-lentele td {
+  padding: 1rem 1.25rem;
+  vertical-align: middle;
+}
+
+.kainu-lentele thead th {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.kainu-lentele td:last-child {
+  color: var(--accent-color);
+  font-weight: 600;
+  white-space: nowrap;
+}
