@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* atsarginis fontas */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h1 { font-size: 2.75rem; font-weight: 700; letter-spacing: -0.5px; }
+h2 { font-size: 2.25rem; font-weight: 600; }
+h3 { font-size: 1.6rem; font-weight: 600; color: #5cc3f0; }
+h4 { font-size: 1.25rem; font-weight: 500; }
+h5 { font-size: 1.1rem; font-weight: 500; }
+h6 { font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
+
+.section-title h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.section-title h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 16px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #1173a8, #2bc4b4);
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #cfdde6;
+  margin-bottom: 1.25rem;
+}
+
+
+/* Mygtukai */
+
+.hero .hero-actions .btn.btn-primary,
+.portfolio .btn-primary {
+  background: linear-gradient(135deg, #1173a8, #0a7d72);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 14px rgba(17, 115, 168, 0.4);
+}
+
+.hero .hero-actions .btn.btn-primary:hover,
+.portfolio .btn-primary:hover {
+  background: linear-gradient(135deg, #1173a8, #0a7d72);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(10, 125, 114, 0.5);
+  filter: brightness(1.15);
+}
+
+.hero .hero-actions .btn.btn-primary:active,
+.portfolio .btn-primary:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Kontūriniai mygtukai (Susisiekti, Peržiūrėti mano darbus) */
+.hero .hero-actions .btn.btn-outline,
+.about .intro-content .cta-group .btn-ghost {
+  border: 2px solid #2bc4b4;
+  border-radius: 8px;
+  color: #2bc4b4;
+  background: transparent;
+}
+
+.hero .hero-actions .btn.btn-outline:hover,
+.about .intro-content .cta-group .btn-ghost:hover {
+  background: #2bc4b4;
+  color: #101a20;
+  border-color: #2bc4b4;
+}
+
+.hero .hero-actions .btn.btn-outline:active,
+.about .intro-content .cta-group .btn-ghost:active {
+  transform: scale(0.96);
+  background: #22a597;
+}
+
+/*Nuorodos*/
+a {
+  color: #5cc3f0;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: #9be0ff;
+}
+
+.services .service-link {
+  color: #2bc4b4;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.services .service-link:hover {
+  color: #9be0ff;
+  text-underline-offset: 8px;
+}
+
+
+.about .intro-content .cta-group .link-underline {
+  color: #2bc4b4;
+}
+
+
+
+/*Tarpai*/
+.about.section,
+.skills.section,
+.resume.section,
+.portfolio.section {
+  padding: 90px 0;
+}
+
+.about .section-title,
+.skills .section-title,
+.resume .section-title,
+.portfolio .section-title {
+  padding-bottom: 40px;
+}
+
+.resume .resume-item {
+  margin-bottom: 2rem;
+}
+
+.portfolio .portfolio-card {
+  margin-bottom: 10px;
+}
+
+
+
+/*Turinio blokai*/
+
+.about .intro-content {
+  background: var(--surface-color);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border-left: 4px solid #2bc4b4;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.skills .skill-box {
+  border-radius: 16px;
+  border: 1px solid rgba(92, 195, 240, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.resume .resume-item {
+  background: var(--surface-color);
+  padding: 2rem 2rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio .portfolio-card {
+  border-radius: 16px;
+  border: 1px solid rgba(92, 195, 240, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/*navigacijos juosta*/
+
+.header {
+  background-color: rgba(11, 20, 25, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #1173a8, #2bc4b4) 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Meniu punktai (tik kompiuterio ekrane) */
+@media (min-width: 1200px) {
+  .navmenu > ul > li {
+    padding: 10px 6px;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    padding: 8px 16px;
+    border-radius: 999px;
+  }
+
+  .navmenu li:hover > a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    background-color: rgba(43, 196, 180, 0.15);
+    color: #2bc4b4;
+  }
+
+  .navmenu > ul > li > a:before {
+    display: none;
+  }
+}
+
+/*Progreso juosta*/
+.skills .skill-box .progress,
+.resume .skill-item .progress {
+  height: 12px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.skills .skill-box .progress .progress-bar,
+.resume .skill-item .progress .progress-bar {
+  background: linear-gradient(90deg, #1173a8, #2bc4b4);
+  border-radius: 4px;
+}
+
+/*nenumeruotas sąrašas*/
+.irankiu-sarasas {
+  list-style: none;
+  padding-left: 0;
+}
+
+.irankiu-sarasas > li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.irankiu-sarasas > li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2bc4b4;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/*numeruotas sąrašas*/
+.etapu-sarasas {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: etapas;
+}
+
+.etapu-sarasas li {
+  counter-increment: etapas;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.1rem;
+  min-height: 2rem;
+}
+
+.etapu-sarasas li::before {
+  content: counter(etapas);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1173a8, #0a7d72);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*įdėtinis sąrašas*/
+.irankiu-sarasas ul {
+  list-style: none;
+  margin: 0.5rem 0 0.25rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(43, 196, 180, 0.35);
+}
+
+.irankiu-sarasas ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #b7c9d4;
+}
+
+.irankiu-sarasas ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5cc3f0;
+}
+
+
+/* ===== Papildoma 2: kainų lentelė ===== */
+.kainu-lentele {
+  border-radius: 12px;
+}
+
+.kainu-lentele table {
+  --bs-table-bg: var(--surface-color);
+  --bs-table-color: var(--default-color);
+  --bs-table-border-color: rgba(255, 255, 255, 0.08);
+  --bs-table-hover-bg: rgba(43, 196, 180, 0.18);
+  --bs-table-hover-color: #ffffff;
+  margin-bottom: 0;
+}
+
+/* c) Vienodi tarpai ir lygiavimas centre */
+.kainu-lentele th,
+.kainu-lentele td {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* a) Antraštinė eilutė */
+.kainu-lentele thead tr {
+  background: linear-gradient(90deg, #1173a8, #0a7d72);
+}
+
+.kainu-lentele thead th {
+  background: transparent;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+  border-bottom: 3px solid #2bc4b4;
+}
+
+/* b) Zebra stilius */
+.kainu-lentele tbody tr:nth-child(even) td {
+  background-color: #1a2a33;
+}
+
+/* Kainos stulpelis */
+.kainu-lentele td:last-child {
+  color: #2bc4b4;
+  font-weight: 600;
+  white-space: nowrap;
+}
