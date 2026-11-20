@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 body {
     font-family: 'Inter', sans-serif;
@@ -66,7 +66,7 @@ p {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Kontūriniai mygtukai (Susisiekti, Peržiūrėti mano darbus) */
+/*Kontūriniai mygtukai*/
 .hero .hero-actions .btn.btn-outline,
 .about .intro-content .cta-group .btn-ghost {
   border: 2px solid #2bc4b4;
@@ -158,6 +158,13 @@ a:hover {
   border-radius: 16px;
   border: 1px solid rgba(92, 195, 240, 0.15);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills .skill-box p {
+  flex-grow: 1;
 }
 
 .resume .resume-item {
@@ -185,7 +192,7 @@ a:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Meniu punktai (tik kompiuterio ekrane) */
+/*Meniu punktai*/
 @media (min-width: 1200px) {
   .navmenu > ul > li {
     padding: 10px 6px;
@@ -308,7 +315,7 @@ a:hover {
 }
 
 
-/* ===== Papildoma 2: kainų lentelė ===== */
+/*Kainų lentelė*/
 .kainu-lentele {
   border-radius: 12px;
 }
@@ -322,7 +329,7 @@ a:hover {
   margin-bottom: 0;
 }
 
-/* c) Vienodi tarpai ir lygiavimas centre */
+/*Tarpai ir lygiavimas*/
 .kainu-lentele th,
 .kainu-lentele td {
   padding: 1rem 1.25rem;
@@ -330,7 +337,7 @@ a:hover {
   vertical-align: middle;
 }
 
-/* a) Antraštinė eilutė */
+/*Antraštinė eilutė*/
 .kainu-lentele thead tr {
   background: linear-gradient(90deg, #1173a8, #0a7d72);
 }
@@ -346,14 +353,604 @@ a:hover {
   border-bottom: 3px solid #2bc4b4;
 }
 
-/* b) Zebra stilius */
+/*Zebra*/
 .kainu-lentele tbody tr:nth-child(even) td {
   background-color: #1a2a33;
 }
 
-/* Kainos stulpelis */
+/*Kainos stulpelis*/
 .kainu-lentele td:last-child {
   color: #2bc4b4;
   font-weight: 600;
   white-space: nowrap;
+}
+
+
+/*Kompetencijų pažanga*/
+.pazanga {
+  --planuojama: #f5a524;
+  --mokomasi: #5cc3f0;
+  --atlikta: #2bc4b4;
+  --linija: rgba(92, 195, 240, 0.35);
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+/*Tinklelis per visą langą*/
+.pazanga.section {
+  background-color: #0e171c;
+  background-image:
+    linear-gradient(rgba(92, 195, 240, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 195, 240, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(92, 195, 240, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 195, 240, 0.03) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+.pazanga.section {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pazanga .lapo-konteineris {
+  max-width: 1560px;
+}
+
+/*Dideli ekranai: viskas proporcingai padidinama*/
+@media (min-width: 1900px) {
+  .pazanga > .container { zoom: 1.15; }
+}
+
+@media (min-width: 2300px) {
+  .pazanga > .container { zoom: 1.35; }
+}
+
+@media (min-width: 2800px) {
+  .pazanga > .container { zoom: 1.6; }
+}
+
+@media (min-width: 3400px) {
+  .pazanga > .container { zoom: 1.9; }
+}
+
+/*Brėžinio lapas*/
+.lapas {
+  position: relative;
+  padding: 64px 72px 56px;
+  border: 1px solid var(--linija);
+  background: rgba(14, 23, 28, 0.75);
+}
+
+.lapas::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(92, 195, 240, 0.2);
+  pointer-events: none;
+}
+
+/*Zonų žymės*/
+.zonos {
+  position: absolute;
+  display: flex;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: rgba(92, 195, 240, 0.55);
+}
+
+.zonos span {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zonos-virsus,
+.zonos-apacia {
+  left: 24px;
+  right: 24px;
+  height: 24px;
+}
+
+.zonos-virsus  { top: 0; }
+.zonos-apacia  { bottom: 0; }
+
+.zonos-virsus span + span,
+.zonos-apacia span + span {
+  border-left: 1px solid rgba(92, 195, 240, 0.2);
+}
+
+.zonos-kaire,
+.zonos-desine {
+  top: 24px;
+  bottom: 24px;
+  width: 24px;
+  flex-direction: column;
+}
+
+.zonos-kaire  { left: 0; }
+.zonos-desine { right: 0; }
+
+.zonos-kaire span + span,
+.zonos-desine span + span {
+  border-top: 1px solid rgba(92, 195, 240, 0.2);
+}
+
+/*Išdėstymas*/
+.lapo-turinys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "planuojama mokomasi atlikta"
+    "lentele    lentele  atlikta"
+    "lentele    lentele  zymejimai";
+  column-gap: 3rem;
+  row-gap: 2.5rem;
+  align-items: start;
+}
+
+.grandine.planuojama   { grid-area: planuojama; }
+.grandine.mokomasi     { grid-area: mokomasi; }
+.grandine.atlikta      { grid-area: atlikta; }
+.antrastine-lentele    { grid-area: lentele; }
+.zymejimai             { grid-area: zymejimai; align-self: end; }
+
+/*Kanban lenta*/
+.grandine {
+  --spalva: var(--mokomasi);
+}
+
+.grandine.planuojama { --spalva: var(--planuojama); }
+.grandine.mokomasi   { --spalva: var(--mokomasi); }
+.grandine.atlikta    { --spalva: var(--atlikta); }
+
+.grandine-galva {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.grandine-galva h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--spalva);
+}
+
+.grandine-busena {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: #9fb3bf;
+}
+
+/*Jungiklio simbolis*/
+.jungiklis {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 18px;
+  background:
+    radial-gradient(circle, var(--spalva) 3px, transparent 3.5px) left bottom / 8px 8px no-repeat,
+    radial-gradient(circle, var(--spalva) 3px, transparent 3.5px) right bottom / 8px 8px no-repeat;
+}
+
+.jungiklis::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 3px;
+  width: 32px;
+  height: 2px;
+  background: var(--spalva);
+  transform-origin: left center;
+}
+
+.planuojama .jungiklis::after {
+  transform: rotate(-30deg);
+}
+
+.mokomasi .jungiklis::after {
+  animation: jungimas 2.4s ease-in-out infinite;
+}
+
+.atlikta .jungiklis::after {
+  transform: rotate(0deg);
+}
+
+/*Laidas*/
+.grandine-elementai {
+  position: relative;
+  padding-left: 30px;
+}
+
+.grandine-elementai::before {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  bottom: 40px;
+  left: 8px;
+  width: 2px;
+}
+
+.planuojama .grandine-elementai::before {
+  background: repeating-linear-gradient(180deg, color-mix(in srgb, var(--planuojama), transparent 45%) 0 3px, transparent 3px 8px);
+}
+
+.mokomasi .grandine-elementai::before {
+  background: repeating-linear-gradient(180deg, var(--mokomasi) 0 10px, transparent 10px 16px);
+  animation: srove16 2s linear infinite;
+}
+
+.atlikta .grandine-elementai::before {
+  background: repeating-linear-gradient(180deg, var(--atlikta) 0 40px, #c8fff8 40px 46px, var(--atlikta) 46px 80px);
+  animation: srove80 2.4s linear infinite;
+}
+
+/*Elementas (įgūdžio kortelė)*/
+.elementas {
+  position: relative;
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.1rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--spalva), transparent 50%);
+  border-radius: 2px;
+  background: #0f1a20;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.elementas:last-child {
+  margin-bottom: 0;
+}
+
+.planuojama .elementas {
+  border-style: dashed;
+}
+
+.elementas:hover {
+  border-color: var(--spalva);
+  background: #132229;
+}
+
+/*Atšaka ir jungties taškas*/
+.elementas::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: -22px;
+  width: 22px;
+  height: 2px;
+  background: color-mix(in srgb, var(--spalva), transparent 30%);
+}
+
+.elementas::after {
+  content: "";
+  position: absolute;
+  top: 31px;
+  left: -26px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--spalva);
+}
+
+.planuojama .elementas::after {
+  background: #0e171c;
+  border: 2px solid var(--planuojama);
+}
+
+.elementas-zyma {
+  position: absolute;
+  top: -0.6rem;
+  left: 0.75rem;
+  padding: 0 0.35rem;
+  background: #0f1a20;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--spalva);
+}
+
+.elementas h4 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.elementas-duomenys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #9fb3bf;
+}
+
+.elementas-duomenys span:last-child {
+  color: #ffffff;
+}
+
+/*Žymėjimai*/
+.zymejimai h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #cfdde6;
+}
+
+.zymejimai ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zymejimai li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: #9fb3bf;
+}
+
+.zymejimo-linija {
+  flex-shrink: 0;
+  width: 44px;
+  height: 2px;
+}
+
+.zymejimo-linija.atlikta {
+  background: var(--atlikta);
+}
+
+.zymejimo-linija.mokomasi {
+  background: repeating-linear-gradient(90deg, var(--mokomasi) 0 10px, transparent 10px 16px);
+}
+
+.zymejimo-linija.planuojama {
+  background: repeating-linear-gradient(90deg, var(--planuojama) 0 3px, transparent 3px 8px);
+}
+
+/*Antraštinė lentelė*/
+.antrastine-lentele {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid var(--linija);
+  background: var(--linija);
+}
+
+.langelis {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.9rem;
+  background: #0e171c;
+}
+
+.langelis > span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: #8fa5b2;
+}
+
+.langelis strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.langelis-xp strong     { color: var(--mokomasi); }
+.langelis-rangas strong { color: var(--atlikta); }
+
+.langelis-progresas {
+  grid-column: 1 / -1;
+}
+
+.progreso-antraste {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progreso-antraste em {
+  font-style: normal;
+  color: var(--atlikta);
+}
+
+.langelis-autorius {
+  grid-column: span 2;
+}
+
+.langelis-autorius strong,
+.langelis-lapas strong {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/*Progreso juosta*/
+.xp-juosta {
+  height: 14px;
+  margin-top: 0.4rem;
+  background: repeating-linear-gradient(90deg, #22323b 0 14px, transparent 14px 18px);
+}
+
+.xp-juosta-uzpildas {
+  height: 100%;
+  background: repeating-linear-gradient(90deg, var(--atlikta) 0 14px, transparent 14px 18px);
+}
+
+/*Animacijos*/
+@keyframes jungimas {
+  0%, 100% { transform: rotate(-30deg); }
+  50%      { transform: rotate(-6deg); }
+}
+
+@keyframes srove16 {
+  from { background-position: 0 0; }
+  to   { background-position: 0 16px; }
+}
+
+@keyframes srove80 {
+  from { background-position: 0 0; }
+  to   { background-position: 0 80px; }
+}
+
+/*Mažesni ekranai*/
+@media (max-width: 1199px) {
+  .lapas {
+    padding: 56px 48px 48px;
+  }
+
+  .lapo-turinys {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "lentele    lentele"
+      "planuojama mokomasi"
+      "atlikta    zymejimai";
+  }
+}
+
+@media (max-width: 767px) {
+  .lapo-turinys {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "lentele"
+      "planuojama"
+      "mokomasi"
+      "atlikta"
+      "zymejimai";
+  }
+}
+
+@media (max-width: 767px) {
+  .lapas {
+    padding: 36px 20px 28px;
+  }
+
+  .lapas::before {
+    inset: 8px;
+  }
+
+  .zonos {
+    display: none;
+  }
+
+  .langelis {
+    padding: 0.55rem 0.6rem;
+  }
+
+  .langelis strong {
+    font-size: 1rem;
+  }
+}
+
+/*Animuotas fonas*/
+.services.section {
+  background: linear-gradient(-45deg, #101a20, #0f3550, #0b3d38, #22244a);
+  background-size: 400% 400%;
+  animation: gradientoJudejimas 18s ease infinite;
+}
+
+@keyframes gradientoJudejimas {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/*Animuotos figūros*/
+.about.section {
+  position: relative;
+}
+
+.about .container {
+  position: relative;
+  z-index: 1;
+}
+
+.figuros {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.figura {
+  position: absolute;
+  display: block;
+  opacity: 0.6;
+}
+
+/*Apskritimas*/
+.apskritimas {
+  top: 6%;
+  left: 3%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #5cc3f0, #1173a8);
+  animation: plaukimas 6s ease-in-out infinite;
+}
+
+/*Trikampis*/
+.trikampis {
+  bottom: 6%;
+  right: 3%;
+  width: 120px;
+  height: 104px;
+  background: linear-gradient(135deg, #2bc4b4, #0a7d72);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  animation: sukimasis 14s linear infinite;
+}
+
+/*Kvadratas*/
+.kvadratas {
+  top: 10%;
+  right: 10%;
+  width: 70px;
+  height: 70px;
+  border: 4px solid #f5a524;
+  border-radius: 12px;
+  animation: pulsavimas 4s ease-in-out infinite;
+}
+
+@keyframes plaukimas {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-30px); }
+}
+
+@keyframes sukimasis {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulsavimas {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(1.3) rotate(45deg); }
+}
+
+@media (max-width: 767px) {
+  .apskritimas { width: 80px;  height: 80px; }
+  .trikampis   { width: 70px;  height: 60px; }
+  .kvadratas   { width: 44px;  height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services.section,
+  .figura,
+  .grandine-elementai::before,
+  .jungiklis::after {
+    animation: none;
+  }
 }
